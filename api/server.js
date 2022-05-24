@@ -33,6 +33,9 @@ let sessionConfig = {
   saveUninitialized:false,
 }
 server.use(session(sessionConfig))
+server.use(express.json())
+server.use('/api/auth',authRouter)
+server.use('/api/users',userRouter)
 
 server.use(helmet());
 server.use(express.json());
